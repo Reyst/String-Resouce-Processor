@@ -22,7 +22,9 @@ class Extractor(val from: String, val to: String, val ios: Boolean) {
             arrayOf(src)
         }
 
-        val writer = OutputStreamWriter(FileOutputStream(File(to)))
+
+        //new BufferedWriter(new OutputStreamWriter(new FileOutputStream("outfilename"), "UTF-8"));
+        val writer = OutputStreamWriter(FileOutputStream(File(to)), "UTF-8")
 
         data.forEach {
             writer.write("${it.name}\n")
