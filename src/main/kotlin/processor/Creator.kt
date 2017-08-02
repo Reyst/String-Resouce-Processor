@@ -74,7 +74,7 @@ class Creator(val from: String, val to: String, val ios: Boolean, val rtl: Boole
         inputLines
                 .filter({ str -> str != null && !str.isEmpty() })
                 .map { str -> str.split(CHAR_DELIMITER) }
-                .filter { it.size > 2 }
+                .filter { it.size >= 2 }
                 .forEach { strList ->
                     val key = strList[0]
                     val value = strList[1]
@@ -115,20 +115,6 @@ class Creator(val from: String, val to: String, val ios: Boolean, val rtl: Boole
                     strElement.appendChild(doc.createTextNode(rtlChar + strList[1]))
                     root.appendChild(strElement)
                 }
-
-//        inputLines
-////                .forEach { println(it) }
-//                .forEach { str ->
-//                    if(str != null && !str.isEmpty()) {
-//                        val strList = str.split(CHAR_DELIMITER)
-//                        if (strList.size >= 2) {
-//                            val strElement = doc.createElement("string")
-//                            strElement.setAttribute("name", strList[0])
-//                            strElement.appendChild(doc.createTextNode(rtlChar + strList[1]))
-//                            root.appendChild(strElement)
-//                        }
-//                    }
-//                }
 
 
     }
